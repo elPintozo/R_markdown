@@ -1,0 +1,109 @@
+---
+title: "Análisis Estadístico para Ingeniería"
+subtitle: "Prueba Parcial Programada I (PEP1)"
+author: "Manuel Villalobos Cid"
+date: "junio 2019"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##1.- Instrucciones
+Este documento contiene las actividades que constituyen la primera **Prueba Especial Programada (PEP1)**.
+Estas evalúan **mediante la práctica** los conocimientos adquiridos en las dos primeras unidades del curso: (1) **Estadística Descriptiva** y (2) **Probabilidad, variables aleatorias y distribución de probabilidad**.
+
+La PEP debe ser realizada en grupos constituídos por un máximo de **dos alumnos** empleando **R/RStudio**, y el contenido debe ser redactado en un informe usando **RMarkdown**. El plazo máximo de entrega corresponde al día **12 de junio.**
+
+No es necesario que presente un documento en el formato convencional típico de otras asignaturas: introducción, índice, antecedentes, entre otras secciones, preferentemente escriba pregunta y el desarrollo de la respuesta. Limítese a efectuar las actividades respondiendo las preguntas planteadas, explicar cada uno de los pasos realizados en R, análizando los resultados. 
+
+Las **tablas** deben ser construidas en base a una clase **dataframe**, y **no** esta **permitido** efectuar cálculos **manuales** o el uso de **otras herramientas**.
+
+##2- Conjunto de datos
+Las actividades se centran en el **contexto futbolístico**. Los datos empleados fueron descargados de [**Club Soccer Predictions**](https://projects.fivethirtyeight.com/soccer-predictions/). La base de datos cuenta con múltiples indicadores para equipos de todo el mundo, no obstante, en el transcurso de este documento se emplearán tres de ellos: puntaje de ataque (**OFF**, offensive score),  puntaje defensivo (**DEF**, defensive score), e índice de poderío (**SPI**, Soccer Power Index). La descripción específica del cálculo de cada una de estas variables puede ser encontrada en el sitio oficial de [**ESPN**](http://www.espn.com/world-cup/story/_/id/4447078/ce/us/guide-espn-spi-ratings).
+
+
+
+##3.- Actividades
+
+###3.1 Definición de clubes
+La primera actividad consiste en la generación de su club deportivo (primero en la lista) y otros 19 equipos que formarán un campeonato ficticio de fútbol. Los nombres de los equipos, así como los parámetros de ataque (OFF), defensa (DEF) y poder (SPI) se estimarán para cada grupo de manera aleatoria. Para ello efectúe lo siguiente, definiendo como entorno de trabajo la carpeta donde ubicó el archivo pdf y las fuentes (carpeta source). **Los resultados mostrados a continuación están realizados a modo de ejemplo**, debe actualizar el campo **nombre** con sus propios datos.
+
+\newpage
+```{r}
+source("source/crear_equipos.R")    #Cargar función específica
+nombre="Datos del primer alumno"    #Emplee el nombre y apellido alumno 1
+equipos=crear_equipos(nombre)       #Función para creación de los equipos
+print(equipos)                      #Mostrar equipos y parámetros
+```
+
+####Actividad
+- Realice el análisis cuantitativo y visual de la frecuencia (absolutas y relativas) de cada variable estadística. Efectue un análisis de los resultados considerando que los equipos registrados en la base de datos de [**Club Soccer Predictions**](https://projects.fivethirtyeight.com/soccer-predictions/) con mejor y peor ofensiva (OFF) son el **Real Madrid** (3.5) y el **Bastia** (0.3), los de mejor y peor defensa (DEF) son el **Bourg-Peronnas** (2.6) y el **Bastia** (0.2), y los equipos de mayor y menor poder (SPI) son el **Bayern Munich** (91.5) y el **Bastia** (11.1).
+- Describa las características de su equipo en comparación al resto de los que conforman la liga.
+
+###3.2 Desarrollo del campeonato
+El campeonato tiene una **modalidad de torneo largo**, donde todos los equipos jugarán todos contra todos estando de local y de visita. El torneo puede ser simulado empleando las siguientes funciones que modelan los resultados aprendiendo de los resultados de partidos reales.
+
+```{r}
+#install.packages('gtools')         # Instalar biblioteca gtools
+library("gtools")                   # Cargar biblioteca gtools
+source("source/jugar_partidos.R")   # Cargar función específica
+partidos=jugar_partidos(equipos)    # Función para jugar todos los partidos
+head(partidos,4)                    # Mostrar sólo los primeros partidos
+```
+
+Las primeras dos componentes describen los nombres de equipos que disputan los partidos (filas), las siguientes exponen sus atributos, y las dos columnas finales expresan el marcador en goles: **GEQ1** (goles del primer equipo) - **GEQ2** (goles del segundo equipo).
+
+####Actividades
+Asumiendo probabilidad uniforme:
+
+- ¿Cuántos partidos se jugaron? Formule, explique y resuelva el problema considerando los conceptos de **combinación/permutación**.
+- ¿Cuál es la probabilidad de que **su equipo** al finalizar el torneo sea el **ganador**?
+- ¿Cuál es probabilidad de que **su equipo** sea campeón del torneo **3 veces consecutivas**?
+- ¿Cuál es la probalidad de que un equipo con un **puntaje de ofensiva (OFF)** sobre la media **NO sea ganador** del torneo?
+
+###3.3 Finalización del campeonato
+El resumen del torneo puede ser visto mediante las siguiente funciones. Los campos **PPER, PEMP, PGAN** corresponden a los partidos perdidos, empatados y ganados del total de unvierso de partidos jugados **(PJUG)**. Los campos **GCON** y **GFAV** equivalen a los goles en favor y encontra respectivamente, mientras que el puntaje final del torneo es representado por el campo **PTJE**. Las victorias suman 3 puntos y los empates 1 punto ganando el torneo aquél equipo que obtenga el mayor puntaje (GAN). 
+
+```{r}
+source("source/resumen_torneo.R")               # Cargar función específica
+tabla_resumen=resumen_torneo(partidos)          # Función para ver el resumen del torneo
+print(tabla_resumen[c(1,5,6,7,8,9,10,11,12,13)])# Ver campos específicos de la tabla final
+```
+
+```{r,eval=FALSE, include=FALSE}
+resumen=hist(tabla_resumen$GCON)
+plot(resumen$mid,resumen$density,type="l")
+par(new=TRUE)
+x=50:122
+plot(x,dnorm(x,81,15))
+```
+
+####Actividades
+- **Grafique el histograma y la distribución normal** de los goles en contra (**GCON**) obtenido por todo el conjunto de equipos en una **misma figura** y **compare**. Ajuste la **presentación visual** del gráfico.
+- ¿Cuál es la probabilidad de que un equipo haya recibido entre 80 y 100 goles empleando el **histograma/tabla de frecuencia**?
+- ¿Cuál es la probabilidad de que un equipo haya recibido entre 80 y 100 goles asumiendo una **distribución normal**?
+
+###3.4 Equipos descendidos, contrataciones y venta de jugadores
+Las reglas indican que al finalizar el torneo los **dos** últimos equipos deben **descender (DES)** a una división menor y que los clubes pueden iniciar la **venta y compra de jugadores**. La siguiente función muestra la actualización del estado de los equipos luego de cerrar el libro de pases.
+
+```{r}
+source("source/actualizar_equipos.R")         # Cargar función específica
+nombre="Datos del segundo alumno"             # Emplee el nombre y apellido alumno 2
+equipos_nuevos=actualizar_equipos(nombre)     # Función para actualizar equipos
+print(equipos_nuevos)                         # Mostrar equipos y parámetros
+```
+El parámetro **COND** indica si un equipo es nuevo **(NUE)** o antiguo **(ANT)**.
+
+####Actividades
+- Asumiendo probalidad uniforme ¿Cuál es la probabilidad de que un equipo **NO salga campeón**, pero **tampoco** vaya a la **segunda división**?
+- Emplee estadística descriptiva *(biblioteca psych)*, identificación de valores atípicos y coeficientes de variación para:
+     - Caracterizar los parámetros de los equipos (OFF, DEF y SPI) **durante el torneo**.
+     - Caracterizar los parámetros de los equipos (OFF, DEF y SPI) una vez que éstos **se actualizaron**.
+- Con los resultados anteriores establezca una comparación para estas tres variables durante (clase 1) y después del torneo (clase 2). Apoye la comparación empleando gráficos de cajas.
+- Si su equipo no descendió: compare sus características al jugar el torneo y en la actualidad.
+
+
+

@@ -1,0 +1,86 @@
+---
+title: "PEP 1"
+author: "Ricardo Ramírez y Rodrigo Vidal"
+date: "6/10/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introducción
+
+
+```{r class.source = c("numCode", "R", "numberLines")}
+library(knitr)
+library(kableExtra)
+
+source("source/crear_equipos.R")    #Cargar función específica
+nombre="Ricardo"    #Emplee el nombre y apellido alumno 1
+equipos=crear_equipos(nombre)       #Función para creación de los equipos
+kable(head(equipos,20))%>%
+  kable_styling(full_width = T)
+```
+* Ataque (OFF), 
+* Defensa (DEF)
+* Poder (SPI)
+
+## Media de (OFF)
+```{r class.source = c("numCode", "R", "numberLines")}
+mediana_off = median(equipos$OFF)
+print(paste(mediana_off))
+```
+
+## Equipos por sobre la Media de (OFF)
+```{r class.source = c("numCode", "R", "numberLines")}
+library("dplyr",warn.conflicts = F)
+filtro1=filter(equipos, OFF > mediana_off)
+filtro1=filtro1[order(filtro1$OFF),]
+kable(filtro1)
+
+paste(count(filtro1)$n, "equipos por sobre la media OFF de un total de", count(equipos)$n )
+```
+
+## Media de DEF
+```{r class.source = c("numCode", "R", "numberLines")}
+mediana_def = median(equipos$DEF)
+print(paste(mediana_def))
+```
+
+## Equipos por sobre la Media de (DEF)
+```{r class.source = c("numCode", "R", "numberLines")}
+library("dplyr",warn.conflicts = F)
+filtro2=filter(equipos, DEF > mediana_def)
+filtro2=filtro2[order(filtro2$DEF),]
+kable(filtro2)
+
+paste(count(filtro2)$n, "equipos por sobre la media DEF de un total de", count(equipos)$n )
+```
+
+## Media de SPI
+```{r class.source = c("numCode", "R", "numberLines")}
+mediana_spi = median(equipos$SPI)
+print(paste(mediana_spi))
+```
+
+## Equipos por sobre la Media de (SPI)
+```{r class.source = c("numCode", "R", "numberLines")}
+library("dplyr",warn.conflicts = F)
+filtro3=filter(equipos, SPI > mediana_spi)
+filtro3=filtro3[order(filtro3$SPI),]
+kable(filtro3)
+
+paste(count(filtro3)$n, "equipos por sobre la media SPI de un total de", count(equipos)$n )
+```
+
+## Equipos por sobre la Media de (OFF), Media de (DEF) y Media de (SPI)
+```{r class.source = c("numCode", "R", "numberLines")}
+filtro_final=filter(equipos, OFF > mediana_off)
+filtro_final=filter(filtro_final, DEF > mediana_def)
+filtro_final=filter(filtro_final, SPI > mediana_spi)
+kable(filtro_final)
+
+paste(count(filtro_final)$n, "equipos por sobre todas las medias de un total de", count(equipos)$n )
+```
+
