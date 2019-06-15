@@ -1,4 +1,9 @@
 ---
+output:
+  pdf_document: default
+  html_document: default
+---
+  ---
 title: "PEP 1"
 author: "Ricardo Ramírez y Rodrigo Vidal"
 date: "6/10/2019"
@@ -12,6 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introducción
 
 
+
+
 ```{r class.source = c("numCode", "R", "numberLines")}
 library(knitr)
 library(kableExtra)
@@ -19,12 +26,139 @@ library(kableExtra)
 source("source/crear_equipos.R")    #Cargar función específica
 nombre="Ricardo"    #Emplee el nombre y apellido alumno 1
 equipos=crear_equipos(nombre)       #Función para creación de los equipos
-kable(head(equipos,20))%>%
-  kable_styling(full_width = T)
+
+kable(equipos)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 ```
 * Ataque (OFF), 
 * Defensa (DEF)
 * Poder (SPI)
+
+
+### Mínimo y máximo de OFF de los equipos
+```{r}
+rango=range(equipos$OFF) # Rango mínimo y máximo de OFF de los equipos
+rango
+
+```
+
+### Mínimo y máximo de DEF de los equipos
+
+```{r}
+rango=range(equipos$DEF) # Rango mínimo y máximo de DEF de los equipos
+rango
+
+```
+
+
+### Mínimo y máximo de SPI de los equipos
+
+```{r}
+rango=range(equipos$SPI) # Rango mínimo y máximo de SPI de los equipos
+rango
+
+```
+
+### Distribución de frecuencia de OFF para los equipos
+
+```{r}
+library(agricolae)
+tabla_freq_off=table.freq(hist(equipos$OFF,
+                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los OFF de los equipos
+
+kable(tabla_freq_off)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
+
+```
+
+
+### Distribución de frecuencia de DEF para los equipos
+
+```{r}
+library(agricolae)
+tabla_freq_def=table.freq(hist(equipos$DEF,
+                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los DEF de los equipos
+kable(tabla_freq_def)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
+```
+
+
+### Distribución de frecuencia de SPI para los equipos
+
+```{r}
+library(agricolae)
+tabla_freq_spi=table.freq(hist(equipos$SPI,
+                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los SPI de los equipos
+  kable(tabla_freq_spi)%>%
+  kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
+```
+
+
+### Diagrama de puntos para visualizar la distribución de los OFF de los equipos
+
+```{r}
+library("BHH2")
+dotPlot(equipos$OFF,xlab = "OFF")
+```
+
+### Diagrama de puntos para visualizar la distribución de los DEF de los equipos
+
+```{r}
+library("BHH2")
+dotPlot(equipos$DEF,xlab = "OFF")
+```
+
+
+### Diagrama de puntos para visualizar la distribución de los SPI de los equipos
+
+```{r}
+library("BHH2")
+dotPlot(equipos$SPI,xlab = "OFF")
+```
+
+
+### Histogramas
+
+#### Histograma para OFF
+
+```{r}
+library("ggplot2")
+grafico=ggplot(equipos,aes(equipos$OFF)) # Gráfico y datos base
+#Histograma (25 niveles) (colores- http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+grafico = grafico + geom_histogram(bins=25,fill="navajowhite",color="orange3")
+grafico = grafico + theme_bw() # Visualización estándar en blanco y negro
+grafico = grafico + ylab("Frecuencia absotula (equipos)") + xlab("OFF")
+grafico = grafico + ggtitle("Histograma de OFF")
+plot(grafico)
+```
+
+#### Histograma para DEF
+
+```{r}
+library("ggplot2")
+grafico=ggplot(equipos,aes(equipos$DEF)) # Gráfico y datos base
+#Histograma (25 niveles) (colores- http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+grafico = grafico + geom_histogram(bins=25,fill="navajowhite",color="orange3")
+grafico = grafico + theme_bw() # Visualización estándar en blanco y negro
+grafico = grafico + ylab("Frecuencia absotula (equipos)") + xlab("DEF")
+grafico = grafico + ggtitle("Histograma de DEF")
+plot(grafico)
+```
+  
+
+#### Histograma para SPI
+
+```{r}
+library("ggplot2")
+grafico=ggplot(equipos,aes(equipos$SPI)) # Gráfico y datos base
+#Histograma (25 niveles) (colores- http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+grafico = grafico + geom_histogram(bins=25,fill="navajowhite",color="orange3")
+grafico = grafico + theme_bw() # Visualización estándar en blanco y negro
+grafico = grafico + ylab("Frecuencia absotula (equipos)") + xlab("SPI")
+grafico = grafico + ggtitle("Histograma de SPI")
+plot(grafico)
+```  
+  
 
 ## Media de (OFF)
 ```{r class.source = c("numCode", "R", "numberLines")}
@@ -37,8 +171,9 @@ print(paste(mediana_off))
 library("dplyr",warn.conflicts = F)
 filtro1=filter(equipos, OFF > mediana_off)
 filtro1=filtro1[order(filtro1$OFF),]
-kable(filtro1)
-
+#kable(filtro1)
+kable(filtro1)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro1)$n, "equipos por sobre la media OFF de un total de", count(equipos)$n )
 ```
 
@@ -53,8 +188,9 @@ print(paste(mediana_def))
 library("dplyr",warn.conflicts = F)
 filtro2=filter(equipos, DEF > mediana_def)
 filtro2=filtro2[order(filtro2$DEF),]
-kable(filtro2)
-
+#kable(filtro2)
+kable(filtro2)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro2)$n, "equipos por sobre la media DEF de un total de", count(equipos)$n )
 ```
 
@@ -69,8 +205,9 @@ print(paste(mediana_spi))
 library("dplyr",warn.conflicts = F)
 filtro3=filter(equipos, SPI > mediana_spi)
 filtro3=filtro3[order(filtro3$SPI),]
-kable(filtro3)
-
+#kable(filtro3)
+kable(filtro3)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro3)$n, "equipos por sobre la media SPI de un total de", count(equipos)$n )
 ```
 
@@ -79,8 +216,9 @@ paste(count(filtro3)$n, "equipos por sobre la media SPI de un total de", count(e
 filtro_final=filter(equipos, OFF > mediana_off)
 filtro_final=filter(filtro_final, DEF > mediana_def)
 filtro_final=filter(filtro_final, SPI > mediana_spi)
-kable(filtro_final)
-
+#kable(filtro_final)
+kable(filtro_final)%>%
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro_final)$n, "equipos por sobre todas las medias de un total de", count(equipos)$n )
 ```
 
