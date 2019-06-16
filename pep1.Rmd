@@ -16,74 +16,64 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introducción
 
-
-
+    
+# Tabla de los equipos a participar del campeonato
 
 ```{r class.source = c("numCode", "R", "numberLines")}
 library(knitr)
 library(kableExtra)
 
 source("source/crear_equipos.R")    #Cargar función específica
-nombre="Ricardo"    #Emplee el nombre y apellido alumno 1
+nombre="Ricardo Ramírez"    #Emplee el nombre y apellido alumno 1
 equipos=crear_equipos(nombre)       #Función para creación de los equipos
 
-kable(equipos)%>%
+kable(equipos)%>% # Creación de la tabla
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 ```
-* Ataque (OFF), 
+
+### **NOTA**: Según resultado obtenido por la creación de la tabla, nuestro equipo es **Rayo Almendra** (Primero de la tabla)
+
+* Ataque (OFF)
 * Defensa (DEF)
 * Poder (SPI)
 
 
-### Mínimo y máximo de OFF de los equipos
-```{r}
-rango=range(equipos$OFF) # Rango mínimo y máximo de OFF de los equipos
-rango
+## Actividad 1
+### 1. Realizar análisis cuantitativo y visual de frecuencia absoluta y frecuencia relativa
 
-```
+### 1.1 Tablas de frecuencia
 
-### Mínimo y máximo de DEF de los equipos
-
-```{r}
-rango=range(equipos$DEF) # Rango mínimo y máximo de DEF de los equipos
-rango
-
-```
-
-
-### Mínimo y máximo de SPI de los equipos
-
-```{r}
-rango=range(equipos$SPI) # Rango mínimo y máximo de SPI de los equipos
-rango
-
-```
-
-### Distribución de frecuencia de OFF para los equipos
+### 1.1.1 Distribución de frecuencia de la característica ofensiva (OFF) de los equipos.
 
 ```{r}
 library(agricolae)
 tabla_freq_off=table.freq(hist(equipos$OFF,
-                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los OFF de los equipos
+                                      breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. OFF
 
-kable(tabla_freq_off)%>%
+kable(tabla_freq_off)%>% # Crea tabla de forma gráfica
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 
 ```
 
 
-### Distribución de frecuencia de DEF para los equipos
+### De la tabla de frecuencia para la característica ofensiva de los equipos del campeonato, podemos observar que un 50% de los equipos posee entre un 0.0 y hasta 1.5 de puntaje, mientras que el otro 50% posee desde un 1.5 hasta un 3.5 de puntaje, por lo anterior, se podría decir que existe una distribución equitativa, que divide dos hemisferios, los equipos que tienen desde 1.5 hacia abajo y los que tienen desde un 1.5 hacia arriba (50 y 50). También se puede apreciar que el 30% de los equipos solamente tiene entre un puntaje entre 1.0 y 1.5 de ofensiva.
+
+
+### 1.1.2 Distribución de frecuencia de la característica defensiva (DEF) de los equipos.
 
 ```{r}
 library(agricolae)
 tabla_freq_def=table.freq(hist(equipos$DEF,
-                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los DEF de los equipos
-kable(tabla_freq_def)%>%
+                                      breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. DEF
+kable(tabla_freq_def)%>% # Crea tabla de forma gráfica
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 ```
 
 
-### Distribución de frecuencia de SPI para los equipos
+### De la tabla de frecuencia para la característica defensiva (DEF) de los equipos, se puede observar que se divide la distribución de los equipos en partes iguales, es decir, el 50% de los equipos tiene entre un 0.0 hasta un 1.5 de puntaje y el otro 50% tiene desde un 1.5 hasta un 3.0 de puntaje, lo que también indica que existe un rango de 1.5 entre el máximo que alcanza cierto grupo y el mínimo que alcanza el otro grupo. También se puede observar que solamente 1 equipo se encuentra entre el puntaje máximo a obtener (entre 2.5 y 3.0) el que representa al 5% de la población del espacio muestral. Por otra parte, otro dato que se puede observar, es que hay 2 grupos que componen el 50% del total de los equipos, los que poseen entre 1.0 y 1.5 puntos (25%) y los que poseen 2.0 y 2.5 puntos (25%).
+
+
+## 1.1.3 Distribución de frecuencia de SPI para los equipos
 
 ```{r}
 library(agricolae)
@@ -94,14 +84,18 @@ tabla_freq_spi=table.freq(hist(equipos$SPI,
 ```
 
 
-### Diagrama de puntos para visualizar la distribución de los OFF de los equipos
+### De la tabla de frecuencia obtenida para el puntaje de poder adquisitivo (SPI) de los equipos, se puede observar que un 35% tiene desde 50 a 60 como máximo, lo que representa a 7 de los 20 equipos del total del espacio muestral y que solamente 1 equipo se encuentra entre el rango de puntaje máximo alcanzado (90 a 100 puntos) y solamente 1 equipo se encuentra entre el rango de puntaje mínimo alcanzado (10 a 20 puntos). También se puede visualizar que un 45% de los equipos alcanza entre 10 a 50 puntos como máximo y un 55% alcanza desde 50 puntos a 100 puntos como máximo, siendo 100 el máximo a alcanzar.
+
+### 1.2 Diagramas de puntos
+
+## 1.2.1 Diagrama de puntos para visualizar la distribución de los puntajes ofensivos de los equipos
 
 ```{r}
 library("BHH2")
 dotPlot(equipos$OFF,xlab = "OFF")
 ```
 
-### Diagrama de puntos para visualizar la distribución de los DEF de los equipos
+## 1.2.2 Diagrama de puntos para visualizar la distribución de los puntajes defensivos de los equipos
 
 ```{r}
 library("BHH2")
@@ -109,7 +103,7 @@ dotPlot(equipos$DEF,xlab = "OFF")
 ```
 
 
-### Diagrama de puntos para visualizar la distribución de los SPI de los equipos
+## 1.2.3 Diagrama de puntos para visualizar la distribución de los puntajes de poder adquisitivo de los equipos
 
 ```{r}
 library("BHH2")
@@ -117,9 +111,9 @@ dotPlot(equipos$SPI,xlab = "OFF")
 ```
 
 
-### Histogramas
+### 1.3 Histogramas
 
-#### Histograma para OFF
+## 1.3.1 Histograma para OFF
 
 ```{r}
 library("ggplot2")
@@ -132,7 +126,7 @@ grafico = grafico + ggtitle("Histograma de OFF")
 plot(grafico)
 ```
 
-#### Histograma para DEF
+## 1.3.2 Histograma para DEF
 
 ```{r}
 library("ggplot2")
@@ -146,7 +140,7 @@ plot(grafico)
 ```
   
 
-#### Histograma para SPI
+## 1.3.3 Histograma para SPI
 
 ```{r}
 library("ggplot2")
@@ -158,41 +152,90 @@ grafico = grafico + ylab("Frecuencia absotula (equipos)") + xlab("SPI")
 grafico = grafico + ggtitle("Histograma de SPI")
 plot(grafico)
 ```  
-  
 
-## Media de (OFF)
+## 1.4 Análisis y comparativa entre equipos de mejor y peor rendimiento y nuestro equipo (Rayo Almendra)
+
+## 1.4.1 Mínimo y máximo de puntaje ofensivo de los equipos
+```{r}
+rango=range(equipos$OFF) # Rango mínimo y máximo de OFF de los equipos
+rango
+```
+
+### El puntaje que posee el equipo con más bajo rendimiento en ofensiva es de 0.48 puntos, mientras que el equipo que posee el más alto puntaje de ofensiva es 3.43. El equipo Rayo Almendra tiene un puntaje ofensivo de 0.54, lo que lo aleja solamente 0.06 puntos del más bajo y una diferencia de 2.89 del equipo con mejor rendimiento ofensivo, lo que posiciona al Rayo Almendra entre el 20% con más bajo puntaje de la tabla.
+
+
+## 1.4.2 Mínimo y máximo de puntaje defensivo de los equipos
+
+```{r}
+rango=range(equipos$DEF) # Rango mínimo y máximo de DEF de los equipos
+rango
+```
+
+### El puntaje mínimo obtenido para la característica defensiva de los equipos es de 0.26, mientras el máximo es de 2.51 puntos. El equipo Rayo Almendra, para esta categoría tiene un puntaje de 1.67, alejandolo 1.41 puntos del mínimo obtenido y 0.84 del puntaje máximo alcanzado, lo que posiciona a nuestro equipo entre el 50% con mejor rendimiento defensivo del campeonato.
+
+
+## 1.4.3 Mínimo y máximo de SPI de los equipos
+
+```{r}
+rango=range(equipos$SPI) # Rango mínimo y máximo de SPI de los equipos
+rango
+
+```
+  
+### El equipo que posee el mínimo SPI tiene 15.52 puntos, mientras que el que posee el máximo puntaje tiene 90.99 puntos. El equipo Rayo Almendra tiene para esta categoría 52.06 puntos, lo que lo aleja 36.54 puntos del peor y 38.93 puntos del mejor. Lo que posiciona a nuestro equipo entre el 55% de mejor puntaje en SPI del campeonato y perteneciendo su puntaje a un 35% del total del espacio muestral.
+
+
+### Generalmente la diferencia para las categorias  entre los peores y mejores rendimientos es la siguiente:
+
+\begin{itemize}
+  \item El peor equipo tiene una diferencia de \textbf{\textit{2.95}} puntos del equipo con mejor ofensiva.
+  \item El peor equipo tiene una diferencia de \textbf{\textit{2.25}} puntos del equipo con mejor defensiva.
+  \item El peor equipo tiene una diferencia de \textbf{\textit{75.47}} puntos del equipo con mejor poder adquisitivo.
+\end{itemize}
+
+## 1.5 Análisis de equipos aplicando medidas de centralidad (Media)
+
+## 1.5.1 Media de OFF
 ```{r class.source = c("numCode", "R", "numberLines")}
 mediana_off = median(equipos$OFF)
 print(paste(mediana_off))
 ```
 
-## Equipos por sobre la Media de (OFF)
+### El equipo Rayo Almendra tiene un puntaje de **0.54**, lo que lo posiciona por debajo de la puntuación media para la característica ofensiva.
+
+##  Equipos por sobre la Media de (OFF)
 ```{r class.source = c("numCode", "R", "numberLines")}
 library("dplyr",warn.conflicts = F)
 filtro1=filter(equipos, OFF > mediana_off)
-filtro1=filtro1[order(filtro1$OFF),]
+filtro1=filtro1[order(filtro1$OFF , decreasing = TRUE),]
 #kable(filtro1)
 kable(filtro1)%>%
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro1)$n, "equipos por sobre la media OFF de un total de", count(equipos)$n )
 ```
 
-## Media de DEF
+
+
+## 1.5.2 Media de DEF
 ```{r class.source = c("numCode", "R", "numberLines")}
 mediana_def = median(equipos$DEF)
 print(paste(mediana_def))
 ```
 
+### El equipo Rayo Almendra para la puntuación de defensiva tiene un puntaje de **1.67**, lo que lo posiciona por sobre el puntaje medio (1.475).
+
 ## Equipos por sobre la Media de (DEF)
 ```{r class.source = c("numCode", "R", "numberLines")}
 library("dplyr",warn.conflicts = F)
 filtro2=filter(equipos, DEF > mediana_def)
-filtro2=filtro2[order(filtro2$DEF),]
+filtro2=filtro2[order(filtro2$DEF, decreasing = TRUE),]
 #kable(filtro2)
 kable(filtro2)%>%
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro2)$n, "equipos por sobre la media DEF de un total de", count(equipos)$n )
 ```
+
+### Se puede observar al equipo en la posición n°9 de la tabla de equipos sobre la media en DEF.
 
 ## Media de SPI
 ```{r class.source = c("numCode", "R", "numberLines")}
@@ -200,16 +243,23 @@ mediana_spi = median(equipos$SPI)
 print(paste(mediana_spi))
 ```
 
+
+### El equipo Rayo Almendra tiene un puntaje de 52.06 para SPI, lo que lo posiciona sobre la media la cual es 51.11.
+
+
 ## Equipos por sobre la Media de (SPI)
 ```{r class.source = c("numCode", "R", "numberLines")}
 library("dplyr",warn.conflicts = F)
 filtro3=filter(equipos, SPI > mediana_spi)
-filtro3=filtro3[order(filtro3$SPI),]
+filtro3=filtro3[order(filtro3$SPI, decreasing = TRUE),]
 #kable(filtro3)
 kable(filtro3)%>%
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro3)$n, "equipos por sobre la media SPI de un total de", count(equipos)$n )
 ```
+
+### El equipo Rayo Almendra queda en la posición n°7 de la tabla de los equipos sobre la media de SPI.
+
 
 ## Equipos por sobre la Media de (OFF), Media de (DEF) y Media de (SPI)
 ```{r class.source = c("numCode", "R", "numberLines")}
@@ -220,5 +270,14 @@ filtro_final=filter(filtro_final, SPI > mediana_spi)
 kable(filtro_final)%>%
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 paste(count(filtro_final)$n, "equipos por sobre todas las medias de un total de", count(equipos)$n )
+```
+
+
+```{r}
+#install.packages('gtools')
+library("gtools")
+source("source/jugar_partidos.R")
+partidos=jugar_partidos(equipos)
+head(partidos,4)
 ```
 
