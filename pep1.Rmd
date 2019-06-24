@@ -308,7 +308,17 @@ print(permutaciones)
 
 ### Analizando los resultados, la cantidad de partidos a jugar fueron 380, considerando que por cada partido existe uno de ida y uno de vuelta.
 
-### Cuál es la probabilidad de que su equipo al finalizar el torneo sea el ganador?
+### ¿Cuál es la probabilidad de que su equipo al finalizar el torneo sea el ganador?
+
+
+### Por distribución de Bernoulli, ya que queremos medir uan variable aleatoria, que mide la cantidad de éxito de salir campéon bajo el experimento de jugar un torneo, en donde los equipos tiene solo 2 posibles eventos, salir campeón o no salir campeón, se aplica el método **dbern** que tendrá como parámetro X = campéón(1) y p=1/20.
+
+```{r}
+install.packages("Rlab")
+library("Rlab")
+cat("La probabilidad de que el equipo Rayo Almendra salga campeón es de", dbern(1, 1/20, log = FALSE), "%")
+```
+
 
 ### por distribución de bernoulli tenemos x = cantidad de veces que existe un ganador(1); ya que existen 20 equipos, el espacio muestral es de 20. Se considera éxito ganar, entonces la probabilidad es 1/20. Se considera fracaso no ganar entonces q=1-P = 1-(1/20) = 19/20.
 ### La probabilidad de que el equipo sea ganador es x = 1 entonces P(x=1) = (1/20)^1*(19/20)^(1-1) = 0.05, lo que nos indica que tenemos una probabilidad de 0.05% de ganar.
@@ -321,8 +331,4 @@ N = 20 # Cantidad de equipos
 permutaciones= nrow(permutations(N,n))
 print(permutaciones)
 ```
-
-
-
-
 
