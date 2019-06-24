@@ -315,8 +315,29 @@ print(permutaciones)
 
 ```{r}
 library("Rlab")
-cat("La probabilidad de que el equipo Rayo Almendra salga campeón es de", dbern(1, 1/20, log = FALSE), "%")
+print(dbern(1, 1/20, log = FALSE))
 ```
 
+### La probabilidad de que el equipo Rayo Almendra salga campeón es de 0.05%
 
 
+### ¿Cuál es probabilidad de que su equipo sea campeón del torneo 3 veces consecutivas?
+
+### Utilizando distribución binomial obtendremos la probabilidad de que nuestro equipo salga 3 veces campeón de forma consecutiva. Aplicando la formula de Distribución bonimial en donde x = 3 (veces que se busca salir campeón), n = 3 (cantidad de campeonatos jugados), p = 1/20 (posibilidad de salir campeón). Se utiliza método dbinom(x,n,p).
+
+```{r}
+print(dbinom(3,3,0.05))
+```
+
+### La probabilidad de que nuestro equipo salga campeón 3 veces consecutivas es de 0.000125%
+
+
+### ¿Cuál es la probalidad de que un equipo con un puntaje de ofensiva (OFF) sobre la media NO sea ganador del torneo?
+
+### Ya que en el punto 1.5.1 tenemos la tabla que indica los equipos por sobre la media de OFF, nuestro espacio muestral se reduce a 10 equipos de los 20, ya que se aplicó un filtro sobre la totalidad.
+
+```{r}
+print(dbern(0, 1/10, log = FALSE))
+```
+
+### La probabilida de que un equipo por sobre la media (10 equipos), no salga campeón es de un 0.9
