@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.7)  23 JUN 2019 23:33
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.7)  24 JUN 2019 00:04
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.7)  24 JUN 2019 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,7 +643,8 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (./pep1.aux)
+)
+No file pep1.aux.
 \openout1 = `pep1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
@@ -725,7 +722,6 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 139.
 LaTeX Info: Redefining \pageref on input line 139.
 LaTeX Info: Redefining \nameref on input line 139.
-(./pep1.out) (./pep1.out)
 \@outlinefile=\write4
 \openout4 = `pep1.out'.
 
@@ -748,6 +744,10 @@ s.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 149.
+
 
 Package xcolor Warning: Incompatible color definition on input line 158.
 
@@ -815,418 +815,328 @@ Package xcolor Warning: Incompatible color definition on input line 253.
 {/Users/thepintozo/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 }]
 
-Package xcolor Warning: Incompatible color definition on input line 262.
+Package xcolor Warning: Incompatible color definition on input line 261.
 
 
-Package xcolor Warning: Incompatible color definition on input line 262.
+Package xcolor Warning: Incompatible color definition on input line 261.
 
 
-Package xcolor Warning: Incompatible color definition on input line 304.
+Package xcolor Warning: Incompatible color definition on input line 303.
 
 
-Package xcolor Warning: Incompatible color definition on input line 312.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 312.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 354.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 [2]
 
-Package xcolor Warning: Incompatible color definition on input line 362.
+Package xcolor Warning: Incompatible color definition on input line 359.
 
 
-Package xcolor Warning: Incompatible color definition on input line 362.
+Package xcolor Warning: Incompatible color definition on input line 359.
 
 
-Package xcolor Warning: Incompatible color definition on input line 407.
+Package xcolor Warning: Incompatible color definition on input line 404.
 
 
-Package xcolor Warning: Incompatible color definition on input line 412.
+Package xcolor Warning: Incompatible color definition on input line 409.
 
 
-Package xcolor Warning: Incompatible color definition on input line 412.
+Package xcolor Warning: Incompatible color definition on input line 409.
 
-<<<<<<< HEAD
-<pep1_files/figure-latex/unnamed-chunk-5-1.pdf, id=229, 369.38pt x 92.345pt>
-=======
-<pep1_files/figure-latex/unnamed-chunk-5-1.pdf, id=233, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+<pep1_files/figure-latex/unnamed-chunk-5-1.pdf, id=41, 369.38pt x 92.345pt>
 File: pep1_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-5-1.pdf  used on
- input line 414.
+ input line 411.
 (pdftex.def)             Requested size: 369.37909pt x 92.34476pt.
 
-Package xcolor Warning: Incompatible color definition on input line 421.
+Package xcolor Warning: Incompatible color definition on input line 418.
 
 [3 <./pep1_files/figure-latex/unnamed-chunk-5-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 426.
+Package xcolor Warning: Incompatible color definition on input line 423.
 
 
-Package xcolor Warning: Incompatible color definition on input line 426.
+Package xcolor Warning: Incompatible color definition on input line 423.
 
-<<<<<<< HEAD
-<pep1_files/figure-latex/unnamed-chunk-6-1.pdf, id=246, 366.36874pt x 83.31125p
-t>
-=======
-<pep1_files/figure-latex/unnamed-chunk-6-1.pdf, id=242, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+<pep1_files/figure-latex/unnamed-chunk-6-1.pdf, id=63, 366.36874pt x 83.31125pt
+>
 File: pep1_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-6-1.pdf  used on
- input line 428.
+ input line 425.
 (pdftex.def)             Requested size: 366.3902pt x 83.31612pt.
 
-Package xcolor Warning: Incompatible color definition on input line 435.
+Package xcolor Warning: Incompatible color definition on input line 432.
 
 
-Package xcolor Warning: Incompatible color definition on input line 440.
+Package xcolor Warning: Incompatible color definition on input line 437.
 
 
-Package xcolor Warning: Incompatible color definition on input line 440.
+Package xcolor Warning: Incompatible color definition on input line 437.
 
-<<<<<<< HEAD
-<pep1_files/figure-latex/unnamed-chunk-7-1.pdf, id=247, 379.4175pt x 83.31125pt
->
-=======
-<pep1_files/figure-latex/unnamed-chunk-7-1.pdf, id=253, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+<pep1_files/figure-latex/unnamed-chunk-7-1.pdf, id=64, 379.4175pt x 83.31125pt>
+
 File: pep1_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-7-1.pdf  used on
- input line 442.
+ input line 439.
 (pdftex.def)             Requested size: 379.42235pt x 83.3123pt.
 
-Package xcolor Warning: Incompatible color definition on input line 450.
+Package xcolor Warning: Incompatible color definition on input line 447.
 
 
-Package xcolor Warning: Incompatible color definition on input line 454.
+Package xcolor Warning: Incompatible color definition on input line 451.
 
 
-Package xcolor Warning: Incompatible color definition on input line 454.
+Package xcolor Warning: Incompatible color definition on input line 451.
 
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 462
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 459
 .
 (/Users/thepintozo/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package xcolor Warning: Incompatible color definition on input line 464.
-
-<<<<<<< HEAD
-
-Package xcolor Warning: Incompatible color definition on input line 474.
+Package xcolor Warning: Incompatible color definition on input line 461.
 
 
-Package xcolor Warning: Incompatible color definition on input line 474.
+Package xcolor Warning: Incompatible color definition on input line 471.
 
-<pep1_files/figure-latex/unnamed-chunk-8-1.pdf, id=248, 463.7325pt x 313.17pt>
-=======
-<pep1_files/figure-latex/unnamed-chunk-8-1.pdf, id=264, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+
+Package xcolor Warning: Incompatible color definition on input line 471.
+
+<pep1_files/figure-latex/unnamed-chunk-8-1.pdf, id=65, 463.7325pt x 313.17pt>
 File: pep1_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-8-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-8-1.pdf  used on
- input line 476.
+ input line 473.
 (pdftex.def)             Requested size: 463.73842pt x 313.174pt.
 [4 <./pep1_files/figure-latex/unnamed-chunk-6-1.pdf> <./pep1_files/figure-latex
 /unnamed-chunk-7-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 481.
+Package xcolor Warning: Incompatible color definition on input line 478.
 
 
-Package xcolor Warning: Incompatible color definition on input line 492.
+Package xcolor Warning: Incompatible color definition on input line 489.
 
 
-Package xcolor Warning: Incompatible color definition on input line 492.
+Package xcolor Warning: Incompatible color definition on input line 489.
 
-<<<<<<< HEAD
-<pep1_files/figure-latex/unnamed-chunk-9-1.pdf, id=271, 463.7325pt x 312.16624p
-t>
-=======
-<pep1_files/figure-latex/unnamed-chunk-9-1.pdf, id=276, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+<pep1_files/figure-latex/unnamed-chunk-9-1.pdf, id=92, 463.7325pt x 312.16624pt
+>
 File: pep1_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-9-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-9-1.pdf  used on
- input line 494.
+ input line 491.
 (pdftex.def)             Requested size: 463.73842pt x 312.17024pt.
 [5 <./pep1_files/figure-latex/unnamed-chunk-8-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 499.
+Package xcolor Warning: Incompatible color definition on input line 496.
 
 
-Package xcolor Warning: Incompatible color definition on input line 510.
+Package xcolor Warning: Incompatible color definition on input line 507.
 
 
-Package xcolor Warning: Incompatible color definition on input line 510.
+Package xcolor Warning: Incompatible color definition on input line 507.
 
-<<<<<<< HEAD
-<pep1_files/figure-latex/unnamed-chunk-10-1.pdf, id=284, 463.7325pt x 313.17pt>
-=======
-<pep1_files/figure-latex/unnamed-chunk-10-1.pdf, id=288, 469.755pt x 325.215pt>
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
+<pep1_files/figure-latex/unnamed-chunk-10-1.pdf, id=106, 463.7325pt x 313.17pt>
 
 File: pep1_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use pep1_files/figure-latex/unnamed-chunk-10-1.pdf>
 Package pdftex.def Info: pep1_files/figure-latex/unnamed-chunk-10-1.pdf  used o
-n input line 512.
+n input line 509.
 (pdftex.def)             Requested size: 463.73842pt x 313.174pt.
 [6 <./pep1_files/figure-latex/unnamed-chunk-9-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 523.
+Package xcolor Warning: Incompatible color definition on input line 520.
 
 
-Package xcolor Warning: Incompatible color definition on input line 528.
+Package xcolor Warning: Incompatible color definition on input line 525.
 
 
-Package xcolor Warning: Incompatible color definition on input line 528.
+Package xcolor Warning: Incompatible color definition on input line 525.
 
 
-Package xcolor Warning: Incompatible color definition on input line 548.
+Package xcolor Warning: Incompatible color definition on input line 545.
 
 
-Package xcolor Warning: Incompatible color definition on input line 553.
+Package xcolor Warning: Incompatible color definition on input line 550.
 
 
-Package xcolor Warning: Incompatible color definition on input line 553.
+Package xcolor Warning: Incompatible color definition on input line 550.
 
 
-Package xcolor Warning: Incompatible color definition on input line 572.
+Package xcolor Warning: Incompatible color definition on input line 569.
 
 [7 <./pep1_files/figure-latex/unnamed-chunk-10-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 577.
+Package xcolor Warning: Incompatible color definition on input line 574.
 
 
-Package xcolor Warning: Incompatible color definition on input line 577.
+Package xcolor Warning: Incompatible color definition on input line 574.
 
 
-Package xcolor Warning: Incompatible color definition on input line 610.
+Package xcolor Warning: Incompatible color definition on input line 607.
 
 
-Package xcolor Warning: Incompatible color definition on input line 615.
+Package xcolor Warning: Incompatible color definition on input line 612.
 
 
-Package xcolor Warning: Incompatible color definition on input line 615.
+Package xcolor Warning: Incompatible color definition on input line 612.
 
 
-Package xcolor Warning: Incompatible color definition on input line 631.
+Package xcolor Warning: Incompatible color definition on input line 628.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+Package xcolor Warning: Incompatible color definition on input line 637.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+Package xcolor Warning: Incompatible color definition on input line 637.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 671.
+Package xcolor Warning: Incompatible color definition on input line 668.
 
 
-Package xcolor Warning: Incompatible color definition on input line 675.
+Package xcolor Warning: Incompatible color definition on input line 672.
 
 
-Package xcolor Warning: Incompatible color definition on input line 675.
+Package xcolor Warning: Incompatible color definition on input line 672.
 
 
-Package xcolor Warning: Incompatible color definition on input line 684.
+Package xcolor Warning: Incompatible color definition on input line 681.
 
 
-Package xcolor Warning: Incompatible color definition on input line 689.
+Package xcolor Warning: Incompatible color definition on input line 686.
 
 
-Package xcolor Warning: Incompatible color definition on input line 689.
+Package xcolor Warning: Incompatible color definition on input line 686.
 
 
-Package xcolor Warning: Incompatible color definition on input line 705.
+Package xcolor Warning: Incompatible color definition on input line 702.
 
 
-Package xcolor Warning: Incompatible color definition on input line 714.
+Package xcolor Warning: Incompatible color definition on input line 711.
 
 
-Package xcolor Warning: Incompatible color definition on input line 714.
+Package xcolor Warning: Incompatible color definition on input line 711.
 
 
-Package xcolor Warning: Incompatible color definition on input line 745.
+Package xcolor Warning: Incompatible color definition on input line 742.
 
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 749.
+Package xcolor Warning: Incompatible color definition on input line 746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 749.
+Package xcolor Warning: Incompatible color definition on input line 746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 763.
+Package xcolor Warning: Incompatible color definition on input line 760.
 
 
-Package xcolor Warning: Incompatible color definition on input line 768.
+Package xcolor Warning: Incompatible color definition on input line 765.
 
 
-Package xcolor Warning: Incompatible color definition on input line 768.
+Package xcolor Warning: Incompatible color definition on input line 765.
 
 
-Package xcolor Warning: Incompatible color definition on input line 783.
+Package xcolor Warning: Incompatible color definition on input line 780.
 
 
-Package xcolor Warning: Incompatible color definition on input line 792.
+Package xcolor Warning: Incompatible color definition on input line 789.
 
 
-Package xcolor Warning: Incompatible color definition on input line 792.
+Package xcolor Warning: Incompatible color definition on input line 789.
 
 
-Package xcolor Warning: Incompatible color definition on input line 823.
+Package xcolor Warning: Incompatible color definition on input line 820.
 
 
-Package xcolor Warning: Incompatible color definition on input line 827.
+Package xcolor Warning: Incompatible color definition on input line 824.
 
 
-Package xcolor Warning: Incompatible color definition on input line 827.
+Package xcolor Warning: Incompatible color definition on input line 824.
 
 
-Package xcolor Warning: Incompatible color definition on input line 843.
+Package xcolor Warning: Incompatible color definition on input line 840.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 852.
+Package xcolor Warning: Incompatible color definition on input line 849.
 
 
-Package xcolor Warning: Incompatible color definition on input line 852.
+Package xcolor Warning: Incompatible color definition on input line 849.
 
 
-Package xcolor Warning: Incompatible color definition on input line 871.
+Package xcolor Warning: Incompatible color definition on input line 868.
 
 
-Package xcolor Warning: Incompatible color definition on input line 875.
+Package xcolor Warning: Incompatible color definition on input line 872.
 
 
-Package xcolor Warning: Incompatible color definition on input line 875.
+Package xcolor Warning: Incompatible color definition on input line 872.
 
 
-Package xcolor Warning: Incompatible color definition on input line 881.
+Package xcolor Warning: Incompatible color definition on input line 878.
 
 
-Package xcolor Warning: Incompatible color definition on input line 889.
+Package xcolor Warning: Incompatible color definition on input line 886.
 
 
-Package xcolor Warning: Incompatible color definition on input line 889.
+Package xcolor Warning: Incompatible color definition on input line 886.
 
 [11] [12]
 
-Package xcolor Warning: Incompatible color definition on input line 1001.
+Package xcolor Warning: Incompatible color definition on input line 998.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1009.
+Package xcolor Warning: Incompatible color definition on input line 1006.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1009.
+Package xcolor Warning: Incompatible color definition on input line 1006.
 
-<<<<<<< HEAD
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1040.
+
+Package xcolor Warning: Incompatible color definition on input line 1032.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1037.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1037.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1057.
+
 [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1040.
-(./pep1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1040.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1040.
 
-Package rerunfilecheck Info: File `pep1.out' has not changed.
-(rerunfilecheck)             Checksum: 793B506386BD23687E292DA56D060A3F;38930.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1040.
- ) 
+Package xcolor Warning: Incompatible color definition on input line 1061.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1061.
+
+
+! Package inputenc Error: Unicode character ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1088 ...ampeon-del-torneo-3-veces-consecutivas}}
+                                                   
 Here is how much of TeX's memory you used:
- 12810 strings out of 494553
- 194093 string characters out of 6174237
- 300910 words of memory out of 5000000
- 16151 multiletter control sequences out of 15000+600000
+ 12703 strings out of 494553
+ 187168 string characters out of 6174237
+ 292732 words of memory out of 5000000
+ 16053 multiletter control sequences out of 15000+600000
  44302 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 28i,9n,35p,4619b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/thepintozo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.en
-c}{/Users/thepintozo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/
-Users/thepintozo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/
-Users/thepintozo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Use
-rs/thepintozo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/t
-hepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/t
-hepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/t
-hepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/
-thepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/
-thepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/t
-hepintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/th
-epintozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/thep
-intozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/thepin
-tozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/thepint
-ozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/thepint
-ozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/thepint
-ozo/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on pep1.pdf (13 pages, 301318 bytes).
-PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 113 named destinations out of 1000 (max. 500000)
- 423 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
+ 28i,9n,35p,830b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Package xcolor Warning: Incompatible color definition on input line 1039.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1043.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1043.
-
-[15]
-
-Package xcolor Warning: Incompatible color definition on input line 1073.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1077.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1077.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1084.
-[16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1084.
-(./pep1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1084.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1084.
-
-Package rerunfilecheck Info: File `pep1.out' has not changed.
-(rerunfilecheck)             Checksum: 395F823A2EC77C0F40B7E1C83C788D9D;40826.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1084.
- ) 
-Here is how much of TeX's memory you used:
- 12817 strings out of 494553
- 192820 string characters out of 6177721
- 301630 words of memory out of 5000000
- 16153 multiletter control sequences out of 15000+600000
- 44302 words of font info for 47 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 28i,9n,35p,4619b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/rodrigov/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/rodr
-igov/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/rodrigov/.Tiny
-TeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/rodrigov/.TinyTeX/texmf-dist
-/fonts/enc/dvips/lm/lm-mathit.enc}{/home/rodrigov/.TinyTeX/texmf-dist/fonts/enc
-/dvips/lm/lm-ec.enc}</home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/l
-mbx10.pfb></home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
-</home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></home/ro
-drigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/rodrigov/.Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/rodrigov/.TinyTeX/texmf
--dist/fonts/type1/public/lm/lmr10.pfb></home/rodrigov/.TinyTeX/texmf-dist/fonts
-/type1/public/lm/lmr5.pfb></home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/publi
-c/lm/lmr7.pfb></home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.p
-fb></home/rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></home/
-rodrigov/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/rodrigov/.
-TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on pep1.pdf (16 pages, 303266 bytes).
-PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 408 compressed objects within 5 object streams
- 118 named destinations out of 1000 (max. 500000)
- 431 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 4c961b45fc6427feeafe4b94f84b60f4087d24c3
-
+!  ==> Fatal error occurred, no output PDF file produced!

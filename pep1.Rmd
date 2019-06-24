@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
   ---
 title: "PEP 1"
@@ -47,8 +47,7 @@ kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 
 ```{r}
 library(agricolae)
-tabla_freq_off=table.freq(hist(equipos$OFF,
-                                      breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. OFF
+tabla_freq_off=table.freq(hist(equipos$OFF,breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. OFF
 
 kable(tabla_freq_off)%>% # Crea tabla de forma gráfica
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
@@ -63,8 +62,7 @@ kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 
 ```{r}
 library(agricolae)
-tabla_freq_def=table.freq(hist(equipos$DEF,
-                                      breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. DEF
+tabla_freq_def=table.freq(hist(equipos$DEF, breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. DEF
 kable(tabla_freq_def)%>% # Crea tabla de forma gráfica
 kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 ```
@@ -77,8 +75,7 @@ kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 
 ```{r}
 library(agricolae)
-tabla_freq_spi=table.freq(hist(equipos$SPI,
-                                      breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los SPI de los equipos
+tabla_freq_spi=table.freq(hist(equipos$SPI, breaks = "Sturges",plot=FALSE)) # Tabla de frecuencia para los SPI de los equipos
   kable(tabla_freq_spi)%>%
   kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
 ```
@@ -314,11 +311,12 @@ print(permutaciones)
 ### Por distribución de Bernoulli, ya que queremos medir uan variable aleatoria, que mide la cantidad de éxito de salir campéon bajo el experimento de jugar un torneo, en donde los equipos tiene solo 2 posibles eventos, salir campeón o no salir campeón, se aplica el método **dbern** que tendrá como parámetro X = campéón(1) y p=1/20.
 
 ```{r}
-install.packages("Rlab")
-library("Rlab")
-cat("La probabilidad de que el equipo Rayo Almendra salga campeón es de", dbern(1, 1/20, log = FALSE), "%")
+#install.packages("Rlab")
+library(Rlab)
+print(dbern(1, 1/20, log = FALSE))
 ```
 
+### La probabilidad de que el equipo Rayo Almendra salga campeón es de 0.05%
 
 ### por distribución de bernoulli tenemos x = cantidad de veces que existe un ganador(1); ya que existen 20 equipos, el espacio muestral es de 20. Se considera éxito ganar, entonces la probabilidad es 1/20. Se considera fracaso no ganar entonces q=1-P = 1-(1/20) = 19/20.
 ### La probabilidad de que el equipo sea ganador es x = 1 entonces P(x=1) = (1/20)^1*(19/20)^(1-1) = 0.05, lo que nos indica que tenemos una probabilidad de 0.05% de ganar.
@@ -332,3 +330,108 @@ permutaciones= nrow(permutations(N,n))
 print(permutaciones)
 ```
 
+### ¿Cuál es probabilidad de que su equipo sea campeón del torneo 3 veces consecutivas?
+
+### Utilizando distribución binomial obtendremos la probabilidad de que nuestro equipo salga 3 veces campeón de forma consecutiva. Aplicando la formula de Distribución bonimial en donde x = 3 (veces que se busca salir campeón), n = 3 (cantidad de campeonatos jugados), p = 1/20 (posibilidad de salir campeón). Se utiliza método dbinom(x,n,p).
+
+```{r}
+print(dbinom(3,3,0.05))
+```
+
+### La probabilidad de que nuestro equipo salga campeón 3 veces consecutivas es de 0.000125%
+
+
+### ¿Cuál es la probalidad de que un equipo con un puntaje de ofensiva (OFF) sobre la media NO sea ganador del torneo?
+
+### Ya que en el punto 1.5.1 tenemos la tabla que indica los equipos por sobre la media de OFF, nuestro espacio muestral se reduce a 10 equipos de los 20, ya que se aplicó un filtro sobre la totalidad.
+
+```{r}
+print(dbern(0, 1/10, log = FALSE))
+```
+
+### La probabilida de que un equipo por sobre la media (10 equipos), no salga campeón es de un 0.9
+
+# 3.3 Finalización del campeonato
+```{r class.source = c("numCode", "R", "numberLines")}
+source("source/resumen_torneo.R") # Carga una función específica
+tabla_resumen=resumen_torneo(partidos) # Función para ver el resumen del torneo
+print(tabla_resumen[c(1,5,6,7,8,9,10,11,12,13)])# Ver campos específicos de la tabla final
+```
+* Partidos Perdidos (PPER)
+* Partidos Empatados (PEMP)
+* Partidos Ganados (PGAN)
+* Partidos Jugados (PJUG)
+* Goles en contra (GCON)
+* Goles a favor (GFAV)
+* Puntaje final del Torneo (PTJE)
+* Posición (POS)
+* Condición (COND)
+
+
+### Grafique el histograma
+```{r}
+library("ggplot2")
+grafico=ggplot(tabla_resumen,aes(tabla_resumen$GCON)) # Gráfico y datos base
+#Histograma (25 niveles) (colores- http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+grafico = grafico + geom_histogram(bins=20,fill="navajowhite",color="orange3")
+grafico = grafico + theme_bw() # Visualización estándar en blanco y negro
+grafico = grafico + ylab("Frecuencia absotula (equipos)") + xlab("GCON")
+grafico = grafico + ggtitle("Histograma de Finalización del campeonato con mención en la columna GCON")
+plot(grafico)
+```  
+
+### La distribución normal de los goles en contra (GCON)
+```{r class.source = c("numCode", "R", "numberLines")}
+tabla_freq_tabla_resumen=table.freq(hist(tabla_resumen$GCON,breaks = "Sturges",plot=FALSE))#Crea Tabla Freq. del resultado de los partidos
+kable(tabla_freq_tabla_resumen)%>% # Crea tabla de forma gráfica
+kable_styling(latex_options = "striped") # Aplicación de estilos a la tabla
+```
+
+### ¿Cuál es la probabilidad de que un equipo haya recibido entre 80 y 100 goles empleando el histograma/tabla de frecuencia?.
+```{r}
+#install.packages("Rlab")
+library(Rlab)
+print(dbern(1, 1/5, log = FALSE))
+```
+
+### ¿Cuál es la probabilidad de que un equipo haya recibido entre 80 y 100 goles asumiendo una distribución normal?
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
+
+# 3.4 Equipos descendidos, contrataciones y venta de jugadores
+```{r class.source = c("numCode", "R", "numberLines")}
+source("source/actualizar_equipos.R") # Cargar función específia
+nombre="Rodrigo Vidal" # Emplee el nombre y apellido alumno 2
+equipos_nuevos=actualizar_equipos(nombre) # Función para actualizar equipos
+print(equipos_nuevos) # Mostrar equipos y parámetros
+```
+* Ataque (OFF)
+* Defensa (DEF)
+* Poder (SPI)
+* Indica si un equipo es nuevo (NUE) o antiguo (ANT) (COND)
+
+### Asumiendo probalidad uniforme ¿Cuál es la probabilidad de que un equipo NO salga campeón, pero tampoco vaya a la segunda división?
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
+
+### Caracterizar los parámetros de los equipos (OFF, DEF y SPI) durante el torneo.
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
+
+### Caracterizar los parámetros de los equipos (OFF, DEF y SPI) una vez que éstos se actualizaron.
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
+
+### Con los resultados anteriores establezca una comparación para estas tres variables durante (clase 1) y después del torneo (clase 2). Apoye la comparación empleando gráficos de cajas.
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
+
+###  Si su equipo no descendió: compare sus características al jugar el torneo y en la actualidad.
+```{r class.source = c("numCode", "R", "numberLines")}
+#
+```
