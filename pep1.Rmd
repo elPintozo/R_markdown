@@ -278,6 +278,51 @@ paste(count(filtro_final)$n, "equipos por sobre todas las medias de un total de"
 library("gtools")
 source("source/jugar_partidos.R")
 partidos=jugar_partidos(equipos)
-head(partidos,4)
+head(partidos,40) # Muestra los primeros 20 partidos  
 ```
+
+
+## 1.6 Actividades Asumiendo probabilidad uniforme
+### ¿Cuántos partidos se jugaron? Formule, explique y resuelva el problema considerando los conceptos de combinación/permutación.
+
+### Ya que el orde de los partidos si importa, ya que se juega uno de ida y uno de vuelta, es decir, 2 partidos por par de equipos, se utiliza el concepto de permutación, en donde utilizando la formula
+
+
+
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}
+
+$\Perm{n}{k}=\frac{n!}{(n-k)!}$
+
+
+
+### en donde N es la cantidad total de equipos (20) y n es la cantidad de partidos para dos equipos, se reflejará el resultado de el total de permutaciones del campeonato.
+
+    
+```{r}
+library(gtools)
+n = 2 # Cantidad de partidos a jugar por par de equipos
+N = 20 # Cantidad de equipos
+permutaciones= nrow(permutations(N,n))
+print(permutaciones)
+```
+
+### Analizando los resultados, la cantidad de partidos a jugar fueron 380, considerando que por cada partido existe uno de ida y uno de vuelta.
+
+### Cuál es la probabilidad de que su equipo al finalizar el torneo sea el ganador?
+
+### por distribución de bernoulli tenemos x = cantidad de veces que existe un ganador(1); ya que existen 20 equipos, el espacio muestral es de 20. Se considera éxito ganar, entonces la probabilidad es 1/20. Se considera fracaso no ganar entonces q=1-P = 1-(1/20) = 19/20.
+### La probabilidad de que el equipo sea ganador es x = 1 entonces P(x=1) = (1/20)^1*(19/20)^(1-1) = 0.05, lo que nos indica que tenemos una probabilidad de 0.05% de ganar.
+
+### ¿Cuál es probabilidad de que su equipo sea campeón del torneo 3 veces consecutivas?
+```{r}
+library(gtools)
+n = 2 # Cantidad de partidos a jugar por par de equipos
+N = 20 # Cantidad de equipos
+permutaciones= nrow(permutations(N,n))
+print(permutaciones)
+```
+
+
+
+
 
